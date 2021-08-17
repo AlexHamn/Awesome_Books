@@ -1,19 +1,15 @@
 let collection = [];
 
-function Book(title, author) {
-    this.title = title,
-    this.author = author,
-    collection.push({ 'title':this.title, 'author': this.author});
+class Book {
+    constructor(title, author) {
+        this.title = title,
+        this.author = author,
+        collection.push({ 'title': this.title, 'author': this.author });
+    }
 }
 
 let book1 = Book('title1', 'mr writer');
 let book2 = Book('title2', 'mr writer');
-
-console.log(collection);
-
-// removeBook('title2');
-
-console.log(collection);
 
 function displayBook(title, author, id) {
     let books = document.getElementById('books');
