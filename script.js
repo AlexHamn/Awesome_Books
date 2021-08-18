@@ -27,26 +27,35 @@ function addBook(e) {
   e.preventDefault();
   const title = addTitle.value;
   const author = addAuthor.value;
-  const book = {
-    title,
-    author,
-  };
-  book.id = Math.floor(Math.random() * 100);
-  books.push(book);
-  localStorage.setItem('books', JSON.stringify(books));
-  addTitle.value = '';
-  addAuthor.value = '';
-  const li = document.createElement('li');
-  li.classList.add('book');
-  li.dataset.id = book.id;
-  li.innerHTML = `
+  if (title === '' || author === '') {
+    const error = document.createElement('p');
+    const location = document.querySelector('#addBook');
+
+    error.innerHTML = `
+    <small class="alert">Please fill all the fields</small>
+  `;
+    location.appendChild(error);
+  } else {
+    const book = {
+      title,
+      author,
+    };
+    book.id = Math.floor(Math.random() * 100);
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books));
+    addTitle.value = '';
+    addAuthor.value = '';
+    const li = document.createElement('li');
+    li.classList.add('book');
+    li.dataset.id = book.id;
+    li.innerHTML = `
     <h2>${book.title}</h2>  
     <p>${book.author}</p>  
     <button class="remove">remove</button>
     <hr>`;
-  booksList.append(li);
+    booksList.append(li);
+  }
 }
-
 function removeBook(elem) {
   if (elem.classList.contains('remove')) {
     elem.parentElement.remove();
