@@ -23,19 +23,31 @@ function displayBooks() {
   });
 }
 
+function isItDuplicate(title, author) {
+  for (let i = 0; i < books.length; i += 1) {
+    if (title === books[i].title && author === books[i].author) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function addBook(e) {
   e.preventDefault();
   const title = addTitle.value;
   const author = addAuthor.value;
+  const error = document.createElement('p');
+  const location = document.querySelector('#addBook');
   if (title === '' || author === '') {
-    const error = document.createElement('p');
-    const location = document.querySelector('#addBook');
-
     error.innerHTML = `
     <small class="alert">Please fill all the fields</small>
   `;
     location.appendChild(error);
-    setTimeout(() => document.querySelector('.alert').remove(), 2000);
+  } else if (isItDuplicate(title, author) === true) {
+    error.innerHTML = `
+    <small class="alert">Book already exists</small>
+  `;
+    location.appendChild(error);
   } else {
     const book = {
       title,
@@ -56,7 +68,9 @@ function addBook(e) {
     <hr>`;
     booksList.append(li);
   }
+  setTimeout(() => document.querySelector('.alert').remove(), 2000);
 }
+
 function removeBook(elem) {
   if (elem.classList.contains('remove')) {
     elem.parentElement.remove();
