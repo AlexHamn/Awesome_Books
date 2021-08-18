@@ -35,6 +35,7 @@ function addBook(e) {
     <small class="alert">Please fill all the fields</small>
   `;
     location.appendChild(error);
+    setTimeout(() => document.querySelector('.alert').remove(), 2000);
   } else {
     const book = {
       title,
