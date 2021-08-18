@@ -31,7 +31,7 @@ function addBook(e) {
     title,
     author,
   };
-  book.id = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+  book.id = Math.floor(Math.random() * 100);
   books.push(book);
   localStorage.setItem('books', JSON.stringify(books));
   addTitle.value = '';
