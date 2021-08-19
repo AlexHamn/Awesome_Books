@@ -37,17 +37,19 @@ function addBook(e) {
   const title = addTitle.value;
   const author = addAuthor.value;
   const error = document.createElement('p');
-  const location = document.querySelector('#addBook');
+  error.className = 'alert';
+  const errLocation = document.querySelector('#addBook');
+
   if (title === '' || author === '') {
     error.innerHTML = `
-    <small class="alert">Please fill all the fields</small>
+    <small>Please fill all the fields</small>
   `;
-    location.appendChild(error);
+    errLocation.appendChild(error);
   } else if (isItDuplicate(title, author) === true) {
     error.innerHTML = `
-    <small class="alert">Book already exists</small>
+    <small>Book already exists</small>
   `;
-    location.appendChild(error);
+    errLocation.appendChild(error);
   } else {
     const book = {
       title,
@@ -68,9 +70,10 @@ function addBook(e) {
     <hr>`;
     booksList.append(li);
   }
-  setTimeout(() => document.querySelector('.alert').remove(), 2000);
+  if (error.classList.contains('alert')) {
+    setTimeout(() => document.querySelector('.alert').remove(), 2000);
+  }
 }
-
 function removeBook(elem) {
   if (elem.classList.contains('remove')) {
     elem.parentElement.remove();
