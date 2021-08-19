@@ -70,7 +70,7 @@ function addBook(e) {
     <hr>`;
     booksList.append(li);
   }
-  if (error.classList.contains('alert')) {
+  if (error.classList.contains('alert') && (document.querySelector('.alert') !== null)) {
     setTimeout(() => document.querySelector('.alert').remove(), 2000);
   }
 }
