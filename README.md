@@ -16,7 +16,6 @@ This is achieved that by using JavaScript objects and arrays. Also, the DOM is d
 
 - Complete website with styles
 
-
 ## Getting Started:
 
 To get a local copy up and running follow these simple example steps:
@@ -44,13 +43,10 @@ To get a local copy up and running follow these simple example steps:
 - Github: [@meltrust](https://github.com/meltrust)
 - Linkedin: [linkedin](https://www.linkedin.com/in/meltrust/)
 
-
 👤 **Alex Gamino**
 
 - Github: [@Alex Gamino](https://github.com/AlexHamn)
 - Linkedin: [linkedin](https://linkedin.com/in/alex-gamino-81aab3214/)
-
-
 
 ## 🤝 Contributing
 
@@ -61,12 +57,6 @@ Feel free to check the [issues page](issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 

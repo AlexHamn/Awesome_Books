@@ -74,6 +74,7 @@ function addBook(e) {
     setTimeout(() => document.querySelector('.alert').remove(), 2000);
   }
 }
+
 function removeBook(elem) {
   if (elem.classList.contains('remove')) {
     elem.parentElement.remove();
@@ -85,12 +86,14 @@ document.addEventListener('DOMContentLoaded', displayBooks);
 addButton.addEventListener('click', addBook);
 
 booksList.addEventListener('click', (e) => {
-  removeBook(e.target);
-  const newBooks = JSON.parse(localStorage.getItem('books'));
-  newBooks.forEach((book, index) => {
-    if (book.author === e.target.previousElementSibling.textContent) {
-      newBooks.splice(index, 1);
-    }
-  });
-  localStorage.setItem('books', JSON.stringify(newBooks));
+  if (e.target.previousElementSibling) {
+    removeBook(e.target);
+    const newBooks = JSON.parse(localStorage.getItem('books'));
+    newBooks.forEach((book, index) => {
+      if (book.author === e.target.previousElementSibling.textContent) {
+        newBooks.splice(index, 1);
+      }
+    });
+    localStorage.setItem('books', JSON.stringify(newBooks));
+  }
 });

@@ -1,7 +1,11 @@
-.subheader {
-  display: none;
+* {
+  list-style: none;
 }
 
 a {
   text-decoration: none;
+}
+
+#booksList {
+  padding: 0;
 }
