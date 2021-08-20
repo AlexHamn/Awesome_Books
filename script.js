@@ -1,4 +1,5 @@
 /* eslint-disable max-classes-per-file */
+/* eslint-disable eqeqeq */
 
 const addButton = document.getElementById('addButton');
 const booksList = document.getElementById('booksList');
@@ -25,13 +26,19 @@ class Manipulation {
 
   static displayBooks() {
     const books = Manipulation.allBooks();
+
     books.forEach((book) => {
       const li = document.createElement('li');
+      const button = document.createElement('button');
+
       li.innerHTML = `
-      <p class="p-0 m-0">"${book.title}" by ${book.author}</p>
-      
-      <button class="remove">Remove</button>`;
+      <p>"${book.title}" by ${book.author}</p>`;
       booksList.append(li);
+      li.append(button);
+      button.setAttribute('id', book.id);
+      button.setAttribute('class', 'remove');
+      button.setAttribute('onclick', 'Manipulation.deleteBookMemory(this.id)');
+      button.textContent = 'Remove';
     });
   }
 
@@ -50,37 +57,39 @@ class Manipulation {
     const books = Manipulation.allBooks();
     const title = addTitle.value;
     const author = addAuthor.value;
-    const error = document.createElement('p');
+    const error = document.createElement('small');
     error.className = 'alert';
-    const errLocation = document.querySelector('#addBook');
+    const errLocation = document.querySelector('#error');
+    const br = document.createElement('br');
 
     if (title === '' || author === '') {
-      error.innerHTML = `
-      <small>Please fill all the fields</small>
-    `;
-      errLocation.appendChild(error);
-    } else if (Manipulation.isItDuplicate(title, author) === true) {
-      error.innerHTML = `
-      <small>Book already exists</small>
-    `;
-      errLocation.appendChild(error);
+      error.textContent = 'Please fill all the fields';
+      errLocation.append(error);
+      error.append(br);
+    } else if (Manipulation.isItDuplicate(title, author) === true || error.textContent) {
+      error.textContent = 'Book already exists';
+      errLocation.append(error);
+      error.append(br);
     } else {
       const book = new Book(title, author);
+      const li = document.createElement('li');
+      const button = document.createElement('button');
 
       book.id = Math.floor(Math.random() * 100);
       books.push(book);
       localStorage.setItem('books', JSON.stringify(books));
       addTitle.value = '';
       addAuthor.value = '';
-      const li = document.createElement('li');
+
       li.classList.add('book');
       li.dataset.id = book.id;
-      li.innerHTML = `
-      <p class="p-0 m-0">"${book.title}" by ${book.author}</p>
-      <button class="remove">Remove</button>`;
-
+      li.innerHTML = `<p>"${book.title}" by ${book.author}</p>`;
       booksList.append(li);
-      document.querySelector('.remove').setAttribute('id', book.id);
+      li.append(button);
+      button.setAttribute('id', book.id);
+      button.setAttribute('class', 'remove');
+      button.setAttribute('onclick', 'Manipulation.deleteBookMemory(this.id)');
+      button.textContent = 'Remove';
     }
     if (error.classList.contains('alert') && (document.querySelector('.alert') !== null)) {
       setTimeout(() => document.querySelector('.alert').remove(), 2000);
@@ -92,6 +101,16 @@ class Manipulation {
       elem.parentElement.remove();
     }
   }
+
+  static deleteBookMemory(id) {
+    const books = Manipulation.allBooks();
+    for (let i = 0; i < books.length; i += 1) {
+      if (books[i].id == id) {
+        books.splice(i, 1);
+      }
+    }
+    localStorage.setItem('books', JSON.stringify(books));
+  }
 }
 
 document.addEventListener('DOMContentLoaded', Manipulation.displayBooks);
@@ -101,12 +120,5 @@ addButton.addEventListener('click', Manipulation.addBook);
 booksList.addEventListener('click', (e) => {
   if (e.target.previousElementSibling) {
     Manipulation.removeBook(e.target);
-    const newBooks = JSON.parse(localStorage.getItem('books'));
-    newBooks.forEach((book, index) => {
-      if (book.author === e.target.previousElementSibling.textContent) {
-        newBooks.splice(index, 1);
-      }
-    });
-    localStorage.setItem('books', JSON.stringify(newBooks));
   }
 });

@@ -11,8 +11,10 @@
   align-items: center;
   width: 100%;
 }
+
 h2 {
   text-align: center;
+  margin-bottom: 0;
 }
 
 a {
@@ -25,6 +27,9 @@ button {
   border-radius: 5%;
   padding: 0.2em 0.4rem;
   box-shadow: 4px 3px black;
+  background: white;
+  cursor: pointer;
+  user-select: none;
 }
 
 input {
@@ -47,6 +52,10 @@ input {
   width: 100%;
 }
 
+.alert {
+  color: red;
+}
+
 #books {
   width: 90%;
 }
@@ -59,7 +68,6 @@ input {
 
 #booksList li {
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -80,4 +88,11 @@ input {
 #addBook button {
   width: min-content;
   margin-right: 5%;
+}
+
+#error {
+  height: 1rem;
+  text-align: center;
+  padding: 0;
+  overflow-y: hidden;
 }
