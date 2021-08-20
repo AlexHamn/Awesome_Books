@@ -28,10 +28,9 @@ class Manipulation {
     books.forEach((book) => {
       const li = document.createElement('li');
       li.innerHTML = `
-      <h2>${book.title}</h2>  
+      <h3>${book.title}</h3>  
       <p>${book.author}</p>  
-      <button class="remove">remove</button>
-      <hr>`;
+      <button class="remove">Remove</button>`;
       booksList.append(li);
     });
   }
@@ -77,10 +76,9 @@ class Manipulation {
       li.classList.add('book');
       li.dataset.id = book.id;
       li.innerHTML = `
-      <h2>${book.title}</h2>  
+      <h3>${book.title}</h3>  
       <p>${book.author}</p>  
-      <button class="remove">remove</button>
-      <hr>`;
+      <button class="remove">Remove</button>`;
       booksList.append(li);
     }
     if (error.classList.contains('alert') && (document.querySelector('.alert') !== null)) {
