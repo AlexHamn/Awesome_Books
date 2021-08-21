@@ -1,11 +1,98 @@
 * {
   list-style: none;
+  font-family: 'Comic Neue', 'Courier New', Courier, monospace;
+  border-radius: 1%;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 0;
 }
 
 a {
   text-decoration: none;
 }
 
+button {
+  all: unset;
+  border: 3px solid black;
+  border-radius: 5%;
+  padding: 0.2em 0.4rem;
+  box-shadow: 4px 3px black;
+  background: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+input {
+  border: 3px solid black;
+  border-radius: 5%;
+  margin: 0.5rem;
+  padding: 0.4rem;
+}
+
+.spacer {
+  border-top: 3px solid black;
+  width: 10%;
+}
+
+.flexRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.alert {
+  color: red;
+}
+
+#books {
+  width: 90%;
+}
+
 #booksList {
   padding: 0;
+  border: 5px solid black;
+  width: 100%;
+}
+
+#booksList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.1rem 1.5rem;
+}
+
+#booksList li:nth-child(odd) {
+  background: rgba(128, 128, 128, 0.267);
+}
+
+#addBook {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#addBook button {
+  width: min-content;
+  margin-right: 5%;
+}
+
+#error {
+  height: 1rem;
+  text-align: center;
+  padding: 0;
+  overflow-y: hidden;
 }
