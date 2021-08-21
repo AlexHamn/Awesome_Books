@@ -19,8 +19,8 @@
     <title>Awesome Books</title>
   </head>
   <body>
-    <div id="main">
-      <nav class="flexRow">
+    <nav class="flexRow">
+      <section class="flexRow">
         <a href="#" id="logo">
           <p class="nav-items">Awesome Books</p>
         </a>
@@ -35,49 +35,53 @@
             <p class="nav-items">Contact</p>
           </a>
         </div>
-      </nav>
-      <section id="hero">
-        <h1 class="section-headers">Welcome to awesome books!</h1>
       </section>
-      <section id="books">
-        <h1 class="section-headers">All awesome books</h1>
-        <ul id="booksList" class="flexRow"></ul>
-      </section>
-      <section id="add">
-        <h1 class="section-headers">Add a new book</h1>
-        <div id="error"></div>
-        <form action="#" id="addBook">
-          <input type="text" name="title" placeholder="Title" id="addTitle" />
-          <br />
-          <input
-            type="text"
-            name="author"
-            placeholder="Author"
-            id="addAuthor"
-          />
-          <br />
-          <button type="submit" id="addButton">Add</button>
-        </form>
-      </section>
-      <section id="contactSection">
-        <h1 class="section-headers">Contact information</h1>
-        <p>
-          Do you have any questions or you just want to say "Hello"? <br />
-          You can reach out to us!
-        </p>
-        <ul>
-          <li>Our e-mail: mail@mail.com</li>
-          <li>Our phone number: 0043586534422</li>
-          <li>Our address: Streetname 22, 84503 City, Country</li>
-        </ul>
-      </section>
-      <script src="script.js"></script>
+    </nav>
+    <div id="main">
+      <div id="content">
+        <section id="hero">
+          <h1 class="section-headers">Welcome to awesome books!</h1>
+        </section>
+        <section id="books">
+          <h1 class="section-headers">All awesome books</h1>
+          <ul id="booksList" class="flexRow"></ul>
+        </section>
+        <section id="add">
+          <h1 class="section-headers">Add a new book</h1>
+          <div id="error"></div>
+          <form action="#" id="addBook">
+            <input type="text" name="title" placeholder="Title" id="addTitle" />
+            <br />
+            <input
+              type="text"
+              name="author"
+              placeholder="Author"
+              id="addAuthor"
+            />
+            <br />
+            <button type="submit" id="addButton">Add</button>
+          </form>
+        </section>
+        <section id="contactSection">
+          <h1 class="section-headers">Contact information</h1>
+          <p>
+            Do you have any questions or you just want to say "Hello"? <br />
+            You can reach out to us!
+          </p>
+          <ul>
+            <li>Our e-mail: mail@mail.com</li>
+            <li>Our phone number: 0043586534422</li>
+            <li>Our address: Streetname 22, 84503 City, Country</li>
+          </ul>
+        </section>
+      </div>
+      <footer>
+        <section id="copyright">
+          <p class="nav-items footer-text">Copyright ...</p>
+        </section>
+        <section id="bottom"><p>//</p></section>
+      </footer>
     </div>
-    <footer>
-      <section id="copyright">
-        <p class="nav-items footer-text">Copyright ...</p>
-      </section>
-      <section id="bottom"><p>//</p></section>
-    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
