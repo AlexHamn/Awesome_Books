@@ -10,62 +10,72 @@
     />
     <link rel="icon" type="image/png" href="/assets/favicon.ico" />
     <link rel="stylesheet" href="/assets/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Awesome Books</title>
   </head>
   <body>
     <div id="main">
-    <nav class="flexRow">
-      <a href="#" id="logo">
-        <p>Awesome Books</p>
-      </a>
-      <div class="flexRow">
-        <a href="#" id="list">
-          <p>List</p>
+      <nav class="flexRow">
+        <a href="#" id="logo">
+          <p class="nav-items">Awesome Books</p>
         </a>
-        <a href="#" id="addNew">
-          <p>Add new</p>
-        </a>
-        <a href="#" id="contact">
-          <p>Contact</p>
-        </a>
-      </div>
-    </nav>
-    <section id="hero">
-      <h1>Welcome to awesome books!</h1>
-    </section>
-    <section id="books">
-      <h1>All awesome books</h1>
-      <ul id="booksList" class="flexRow"></ul>
-    </section>
-    <section id="add">
-      <h1>Add a new book</h1>
-      <div id="error"></div>
-      <form action="#" id="addBook">
-        <input type="text" name="title" placeholder="Title" id="addTitle" />
-        <br />
-        <input type="text" name="author" placeholder="Author" id="addAuthor" />
-        <br />
-        <button type="submit" id="addButton">Add</button>
-      </form>
-    </section>
-    <section id="contactSection">
-      <h1>Contact information</h1>
-      <p>Do you have any questions or you just want to say "Hello"?
-        <br> You can reach out to us!</p>
+        <div class="flexRow">
+          <a href="#" id="list">
+            <p class="nav-items">List</p>
+          </a>
+          <a href="#" id="addNew">
+            <p class="nav-items">Add new</p>
+          </a>
+          <a href="#" id="contact">
+            <p class="nav-items">Contact</p>
+          </a>
+        </div>
+      </nav>
+      <section id="hero">
+        <h1 class="section-headers">Welcome to awesome books!</h1>
+      </section>
+      <section id="books">
+        <h1 class="section-headers">All awesome books</h1>
+        <ul id="booksList" class="flexRow"></ul>
+      </section>
+      <section id="add">
+        <h1 class="section-headers">Add a new book</h1>
+        <div id="error"></div>
+        <form action="#" id="addBook">
+          <input type="text" name="title" placeholder="Title" id="addTitle" />
+          <br />
+          <input
+            type="text"
+            name="author"
+            placeholder="Author"
+            id="addAuthor"
+          />
+          <br />
+          <button type="submit" id="addButton">Add</button>
+        </form>
+      </section>
+      <section id="contactSection">
+        <h1 class="section-headers">Contact information</h1>
+        <p>
+          Do you have any questions or you just want to say "Hello"? <br />
+          You can reach out to us!
+        </p>
         <ul>
           <li>Our e-mail: mail@mail.com</li>
           <li>Our phone number: 0043586534422</li>
           <li>Our address: Streetname 22, 84503 City, Country</li>
         </ul>
-    </section>
-    <script src="script.js"></script>
+      </section>
+      <script src="script.js"></script>
     </div>
     <footer>
       <section id="copyright">
-        <p>Copyright ...</p>
+        <p class="nav-items footer-text">Copyright ...</p>
       </section>
       <section id="bottom"><p>//</p></section>
     </footer>
