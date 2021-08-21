@@ -2,7 +2,7 @@
 
 > Basic website that allows users to add/remove books from a list. 
 
-![screenshot](./assets/app_screenshot.png)
+![screenshot](./assets/awesomeBooksSS.jpg)
 
 This is achieved that by using JavaScript objects and arrays. Also, the DOM is dynamically modified with basic events. 
 

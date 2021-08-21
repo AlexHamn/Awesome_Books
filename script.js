@@ -177,4 +177,4 @@ homeLink.addEventListener('click', homeLinkClick);
 listLink.addEventListener('click', listLinkClick);
 addLink.addEventListener('click', addLinkClick);
 contactLink.addEventListener('click', contactLinkClick);
-timeValue.textContent = currentTime.toLocaleString(DateTime.DATETIME_MED);
+timeValue.textContent = currentTime.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);

@@ -5,8 +5,6 @@
 
 body {
   margin: 0;
-
-  /* text-align: center; */
 }
 
 #main {
@@ -15,10 +13,6 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
-  /* margin-left: 5%; */
-
-  /* height: 95vh; */
 }
 
 #content {
@@ -31,7 +25,6 @@ body {
 }
 
 nav {
-  /* height: 5vh; */
   min-height: 60px;
 }
 
@@ -40,6 +33,7 @@ nav {
   justify-self: baseline;
   align-items: center;
   border: 5px solid black;
+  margin-top: 0.5rem;
   height: 90%;
   width: 90% !important;
   position: relative;
@@ -69,8 +63,6 @@ nav section div a {
 .clock-section {
   width: 100%;
   margin: 0 auto;
-
-  /* height: ; */
 }
 
 .clock-container {
@@ -181,7 +173,7 @@ input {
   border: 5px solid black;
   width: 100%;
   max-height: 60vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 #booksList li {
@@ -246,8 +238,6 @@ footer {
   border: 5px solid black;
   margin-left: 5%;
   margin-right: 5%;
-
-  /* padding: 0.1% 0.5rem; */
   width: 90%;
   font-weight: bold;
 }
