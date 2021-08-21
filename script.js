@@ -127,6 +127,9 @@ const heroSection = document.getElementById('hero');
 const booksSection = document.getElementById('books');
 const addSection = document.getElementById('add');
 const contactSection = document.getElementById('contactSection');
+const timeValue = document.getElementById('clock');
+const { DateTime } = luxon; // eslint-disable-line
+const currentTime = DateTime.now();
 
 const homeLink = document.getElementById('logo');
 const listLink = document.getElementById('list');
@@ -174,3 +177,4 @@ homeLink.addEventListener('click', homeLinkClick);
 listLink.addEventListener('click', listLinkClick);
 addLink.addEventListener('click', addLinkClick);
 contactLink.addEventListener('click', contactLinkClick);
+timeValue.textContent = currentTime.toLocaleString(DateTime.DATETIME_MED);

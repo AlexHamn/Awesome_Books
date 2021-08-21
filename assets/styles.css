@@ -17,7 +17,8 @@ body {
   width: 100%;
 
   /* margin-left: 5%; */
-  height: 95vh;
+
+  /* height: 95vh; */
 }
 
 #content {
@@ -30,11 +31,11 @@ body {
 }
 
 nav {
-  height: 5vh;
+  /* height: 5vh; */
   min-height: 60px;
 }
 
-nav section {
+.main-nav {
   justify-content: space-between !important;
   justify-self: baseline;
   align-items: center;
@@ -63,6 +64,27 @@ nav section div a {
   margin: 0.3rem 0.5rem;
   padding-right: 1rem;
   border-right: 3px solid black;
+}
+
+.clock-section {
+  width: 100%;
+  margin: 0 auto;
+
+  /* height: ; */
+}
+
+.clock-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.clock {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0.6rem;
+  margin-bottom: 0;
 }
 
 #contact {
@@ -139,8 +161,10 @@ input {
 }
 
 .section-headers {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
 }
 
 #books {
@@ -156,7 +180,7 @@ input {
   padding: 0;
   border: 5px solid black;
   width: 100%;
-  max-height: 90%;
+  max-height: 60vh;
   overflow: scroll;
 }
 
@@ -176,6 +200,7 @@ input {
   display: none;
   width: 50%;
   text-align: center;
+  margin: 10% auto;
 }
 
 #addBook {
@@ -183,6 +208,10 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+}
+
+#hero {
+  margin: 15% auto;
 }
 
 #addBook button {
@@ -199,6 +228,7 @@ input {
 
 #contactSection {
   display: none;
+  margin: 10% auto;
 }
 
 footer {
@@ -207,6 +237,8 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: fixed;
+  bottom: 0;
 }
 
 #copyright {
