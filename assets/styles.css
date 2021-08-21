@@ -5,6 +5,7 @@
 
 body {
   margin: 0;
+
   /* text-align: center; */
 }
 
@@ -14,6 +15,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
   /* margin-left: 5%; */
   height: 95vh;
 }
@@ -38,7 +40,9 @@ nav section {
   align-items: center;
   border: 5px solid black;
   height: 90%;
-  width: 90%;
+  width: 90% !important;
+  position: relative;
+  left: 0.4rem;
 }
 
 a {
@@ -47,7 +51,7 @@ a {
 }
 
 nav section a {
-  margin-left: 5%;
+  margin-left: 2rem;
 }
 
 nav section div {
@@ -64,6 +68,14 @@ nav section div a {
 #contact {
   margin-right: 0;
   border-right: 0;
+}
+
+.contact-text {
+  font-size: 2rem;
+}
+
+.contact-text-secondary {
+  font-size: 1.8rem;
 }
 
 h1 {
@@ -202,7 +214,9 @@ footer {
   border: 5px solid black;
   margin-left: 5%;
   margin-right: 5%;
-  padding: 0.1% 0.5rem;
+
+  /* padding: 0.1% 0.5rem; */
+  width: 90%;
   font-weight: bold;
 }
 

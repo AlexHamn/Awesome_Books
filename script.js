@@ -145,6 +145,9 @@ function listLinkClick() {
   booksSection.style.display = 'flex';
   addSection.style.display = 'none';
   contactSection.style.display = 'none';
+  listLink.style.color = 'blue';
+  addLink.style.color = 'black';
+  contactLink.style.color = 'black';
 }
 
 function addLinkClick() {
@@ -152,6 +155,9 @@ function addLinkClick() {
   booksSection.style.display = 'none';
   addSection.style.display = 'block';
   contactSection.style.display = 'none';
+  listLink.style.color = 'black';
+  addLink.style.color = 'blue';
+  contactLink.style.color = 'black';
 }
 
 function contactLinkClick() {
@@ -159,6 +165,9 @@ function contactLinkClick() {
   booksSection.style.display = 'none';
   addSection.style.display = 'none';
   contactSection.style.display = 'block';
+  listLink.style.color = 'black';
+  addLink.style.color = 'black';
+  contactLink.style.color = 'blue';
 }
 
 homeLink.addEventListener('click', homeLinkClick);
