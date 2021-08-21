@@ -122,3 +122,46 @@ booksList.addEventListener('click', (e) => {
     Manipulation.removeBook(e.target);
   }
 });
+
+const heroSection = document.getElementById('hero');
+const booksSection = document.getElementById('books');
+const addSection = document.getElementById('add');
+const contactSection = document.getElementById('contactSection');
+
+const homeLink = document.getElementById('logo');
+const listLink = document.getElementById('list');
+const addLink = document.getElementById('addNew');
+const contactLink = document.getElementById('contact');
+
+function homeLinkClick() {
+  heroSection.style.display = 'block';
+  booksSection.style.display = 'none';
+  addSection.style.display = 'none';
+  contactSection.style.display = 'none';
+}
+
+function listLinkClick() {
+  heroSection.style.display = 'none';
+  booksSection.style.display = 'flex';
+  addSection.style.display = 'none';
+  contactSection.style.display = 'none';
+}
+
+function addLinkClick() {
+  heroSection.style.display = 'none';
+  booksSection.style.display = 'none';
+  addSection.style.display = 'block';
+  contactSection.style.display = 'none';
+}
+
+function contactLinkClick() {
+  heroSection.style.display = 'none';
+  booksSection.style.display = 'none';
+  addSection.style.display = 'none';
+  contactSection.style.display = 'block';
+}
+
+homeLink.addEventListener('click', homeLinkClick);
+listLink.addEventListener('click', listLinkClick);
+addLink.addEventListener('click', addLinkClick);
+contactLink.addEventListener('click', contactLinkClick);
