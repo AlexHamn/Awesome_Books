@@ -122,3 +122,59 @@ booksList.addEventListener('click', (e) => {
     Manipulation.removeBook(e.target);
   }
 });
+
+const heroSection = document.getElementById('hero');
+const booksSection = document.getElementById('books');
+const addSection = document.getElementById('add');
+const contactSection = document.getElementById('contactSection');
+const timeValue = document.getElementById('clock');
+const { DateTime } = luxon; // eslint-disable-line
+const currentTime = DateTime.now();
+
+const homeLink = document.getElementById('logo');
+const listLink = document.getElementById('list');
+const addLink = document.getElementById('addNew');
+const contactLink = document.getElementById('contact');
+
+function homeLinkClick() {
+  heroSection.style.display = 'block';
+  booksSection.style.display = 'none';
+  addSection.style.display = 'none';
+  contactSection.style.display = 'none';
+}
+
+function listLinkClick() {
+  heroSection.style.display = 'none';
+  booksSection.style.display = 'flex';
+  addSection.style.display = 'none';
+  contactSection.style.display = 'none';
+  listLink.style.color = 'blue';
+  addLink.style.color = 'black';
+  contactLink.style.color = 'black';
+}
+
+function addLinkClick() {
+  heroSection.style.display = 'none';
+  booksSection.style.display = 'none';
+  addSection.style.display = 'block';
+  contactSection.style.display = 'none';
+  listLink.style.color = 'black';
+  addLink.style.color = 'blue';
+  contactLink.style.color = 'black';
+}
+
+function contactLinkClick() {
+  heroSection.style.display = 'none';
+  booksSection.style.display = 'none';
+  addSection.style.display = 'none';
+  contactSection.style.display = 'block';
+  listLink.style.color = 'black';
+  addLink.style.color = 'black';
+  contactLink.style.color = 'blue';
+}
+
+homeLink.addEventListener('click', homeLinkClick);
+listLink.addEventListener('click', listLinkClick);
+addLink.addEventListener('click', addLinkClick);
+contactLink.addEventListener('click', contactLinkClick);
+timeValue.textContent = currentTime.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
